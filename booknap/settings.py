@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-5^)sch^xbxjy=2zs)6r5i#px+8l*&^-(*74oya=yeik^r0b)%l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1', 'booknap.herokuapp.com']
 
 
 # Application definition
