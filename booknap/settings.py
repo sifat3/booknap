@@ -13,6 +13,8 @@ import os.path
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+import django_heroku
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -25,7 +27,7 @@ SECRET_KEY = 'django-insecure-5^)sch^xbxjy=2zs)6r5i#px+8l*&^-(*74oya=yeik^r0b)%l
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'booknap.herokuapp.com']
+ALLOWED_HOSTS = ['booknap.herokuapp.com']
 
 
 # Application definition
@@ -42,7 +44,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -77,11 +78,12 @@ WSGI_APPLICATION = 'booknap.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'booknap',
-        'USER': 'postgres',
-        'PASSWORD': '042160127',
-        'HOST': 'localhost'
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'dckoro24dc8f8o',
+        'USER': 'lsthbmefrjkzeo',
+        'PASSWORD': 'd0f2e8b5f1b9acf4e62a8c8d9ebfd707880ee6f285ad683fb17a8e4c12a06a85',
+        'HOST': 'ec2-44-197-128-108.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
@@ -121,6 +123,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+django_heroku.settings(locals())
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
 ]
